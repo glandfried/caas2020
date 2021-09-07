@@ -1,0 +1,9 @@
+[submodule "images"]
+	path = images
+	url = git@github.com:glandfried/images.git
+[submodule "figures/tex"]
+	path = figures/..tex/
+	url = git@github.com:glandfried/tex.git
+[submodule "tex"]
+	path = tex
+	url = git@github.com:glandfried/tex.git

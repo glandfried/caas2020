@@ -1,0 +1,32 @@
+\documentclass[10pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\input{../tex/tikzlibrarybayesnet.code.tex}
+\input{../tex/encabezado.tex}
+\makeatletter
+\newcommand{\vast}{\bBigg@{2.5}}
+\newcommand{\Vast}{\bBigg@{14.5}}
+\makeatother
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+\tikz{        
+    
+    \node[latent] (d) {\includegraphics[width=0.05\textwidth]{../images/dedo.png}} ;
+    \node[const,above=of d] (nd) {\Large $d$} ;
+
+    \node[latent, above=of d, xshift=-1.5cm] (r) {\includegraphics[width=0.06\textwidth]{../images/regalo.png}} ;
+    \node[const,above=of r] (nr) {\Large $r$} ;    
+    
+    \node[latent, fill=black!30, above=of d, xshift=1.5cm] (c) {\includegraphics[width=0.06\textwidth]{../images/cerradura.png}} ;
+    \node[const,above=of c] (nc) {\Large $c$} ;
+    
+    \node[invisible, xshift=3.5cm] (s-dist) {};
+         
+    
+    \edge {r,c} {d};
+}
+
+\end{document}
